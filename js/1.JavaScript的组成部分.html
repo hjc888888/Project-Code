@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         js组成部分
+         ECMAscript语言核心功能
+         bom浏览器对象盒模型
+         dom文档对象盒模型
+
+         常见的浏览器内核
+         webikt 内核包括safari 谷歌 欧朋以及国产浏览器以及手机浏览器
+         Gecko内核是火狐浏览器
+         presto内核欧朋浏览器，现在部分版本改成blink内核
+         Trident内核ie浏览器
+
+         js引入方式
+         行内 style =""
+         内嵌
+         外链<link...>
+
+         输出的方式
+         alert
+         consol.log()
+         console.dir()
+
+         变量
+         var let const syboml class function import
+
+         js命名规范
+         1.区分大小写
+         2.可以用字母，_,$,开头，不可以以数字开头
+         3.不能使用保留字和关键字
+           关键字 let var const...
+           保留字
+           for int import export
+        4.使用驼峰命名法
+
+        js的数据类型
+        1.基本数据类型
+          number string 布尔  null undefied NAN
+        2.对象类型
+        object 包括 function Math Dete 正则 Array
+        function
+
+        区别：基本数据类型是用来操作值的，对象类型是用来操作空间地址的
+       
+       把其他数据类型转化成数字类型
+       首先转换成字符串再转换成数字，如果字符串中是非有效数字直接是NaN
+       Number("12px")=>NAN
+       Number("12")=>12
+       Number(null)=>0
+       Number(undefined)=>NaN
+       Number({"name":"lili"})=>NaN
+       Number([1,2])=>NaN
+       Number([1])=>1
+
+       parseInt提取整数不包含小数点后面的
+       parseFloat提取小数点后面的以为小数
+
+       NAN不和任何数据类型相等，包括他自己，用来检测他是不是有效数据
+       用isNAN如果得出结果是false是有效数据，如果是true就是非有效数据
+       isNaN(1)==>false;
+       isNaN("2")===> false;
+       isNaN(true)===>false;
+       isNaN(false)===>false;
+       isNaN(null)===>false;
+       isNaN(undefined)===>true;
+       isNaN({'name':'lili'})=>true;
+       isNaN([1,2])=>true
+       isNaN([1])=>false
+
+       判断boolean类型
+       碰到 0 null ，undefied NAN，""都是false，其他的都是true
+       
+       null和undefied的区别：
+       null
+       当id获取元素时，如果id对应的这个元素不存在，那么获取为null；
+       当正则获取不到内容时，那么返回为null；
+       当获取元素的哥哥元素节点时，如果不存在，那么返回结果为null；
+
+       undefined
+       函数有形参没实参，返回值为undefied
+       函数没有return，返回值为undefied
+       如果只声明未赋值，返回值为undfined；
+        
+       object对象数据类型：是由属性值和属性名组成的。
+       属性名被称为key，属性值被称为value
+         let a ={
+            "name":"jom",
+            "age":18,
+        }
+        console.log(a.name)
+        console.log(a["age"])
+        获取属性名对应的属性值用a.xxx或a[""]获取
+
+        增加或修改
+         let a ={
+            "name":"jom",
+            "age":18,
+        }
+        a.sex="男";
+        a.name = "box";
+        console.log(a.name)
+        console.log(a["sex"])
+        通过a.xxx或a[""]去增加或修改属性名对应的属性值
+
+        删除 delete
+         let a ={
+            "name":"jom",
+            "age":18,
+        }
+        a["sex"]="男";
+        delete a["sex"]
+        console.log(a.name)
+        console.log(a["age"])
+        console.log(a["sex"])
+        用delete删除属性名对应的属性值
+        对象只能用数字或者字符串的格式，不用直接用obj.数字会直接报错的；
+
+        js运行机制
+        浏览器是给js提供一个运行环境的分别的是栈内存和堆内存
+        栈内存：是用来存储值的，按值操作的
+        堆内存的作用：存放引用数据类型，对象的话存贮的就是键值对，如果是函数，把整个函数当成字符串进行存储
+        && 左右俩边的条件都要满足才能成立；
+        || 左右俩边的条件只要满足一个就可以
+        如果是单独一个值，首先把它转换成布尔类型再去比较
+        == 是把其他数据类型转换成数字类型在比较
+        === 类型必须一模一样的才能去比较
+
+        判断语句
+        if/else只要第一个条件成立了后面的判断条件就不管了
+        for判断语句
+        1.设置初始值
+        2.判断条件
+        3.执行循环体的内容
+        4.累加步长
+        continue 循环执行
+        break 只要设置break后面的永远都不执行了
+
+        获取dom元素的方式
+        document.getElementById 通过Id获取属性名
+        document.getElementsTagName()
+        document.getElementsByClassname通过标签名获取
+        document.Html/head/body
+        document.querySelector()
+        document.querySelectAllor()
+
+        className:存储一个字符串，代表当前的样式
+        innterHTML:存储当前元素中所有的内容
+        innerText：存储当前元素中所有的文本内容(没有元素标签)
+        onclick 是一个元素的点击事件,基于这个属性，可以给当前元素绑定事件
+        onmouseover：鼠标滑过事件
+        onmouseout：鼠标离开事件
+        style 行内样式
+        
+        函数
+        在js中，函数就是一个方法，基于函数实现这个功能
+        function fn(10,10){
+          return (10+10)/2
+        }
+        fn(10,10)
+
+        检测数据类型
+        typeof() typeof只能检测基本数据类型，检测不出来对象类型
+        constructor() constructor()不能原型上的属性重定向，不能增加私有属性，容易被修改，检测出来的结果也不够准确，能检测出来基本数据类型
+        返回值也是true或false
+        instanceof()  
+        instanceof他是检测原型上的某个内置类,返回的只能是true或false,只能检测引用数据类型，检测不了基本数据类型
+        consloe.log(arr instanceof Array) =>true
+        consloe.log(arr instanceof object) =>true
+        consloe.log(Number(10) instanceof Number) =>false
+
+        Object.prototype.tostring.call()目前好的检测方法，专门用来检测数据类型的方法，只能检测内置类的方法，不能检测自定义的
+        方法,如果检测的话，得出结果就是['Object,object']
+
+        数组方法：
+        push：向数组末尾添向加一位，原数组发生改变。
+        pop：删除末尾一项，原数组发生改变
+        shift：向数组删除某一项，原数组发生改变
+        unshift：向数组开头添加一项,
+        indexOf,从数组第一项开始检测,原数组不发生改变
+        lastIndexof从数组最后一项开始检测，原数组不发生改变
+        reverse倒序 把数组从大到小排列，原数组不发生改变
+        sort排序,原数组发生改变;
+        arr.sort((a,b) => a-b)从小到大排列
+        arr.sort((a,b) => b-a)从大到小排列
+        const数组拼接，原数组发生改变
+        join字符串拼接，原数组发生改变
+        tostring()把数组转成字符串，原数组发生改变
+        map把原数组映射成一个新的数组原数组发生改变
+        splice
+        splice(0,n)删除某一项,0代表索引开始位置，删除n项;原数组发生改变;
+        splice(0,m,n)从0开始，删除m项，增加n项;原数组发生改变;
+        slice
+        slice(n,m)从n项开始删除m项(不包含m项)
+        slice(n,0,m)从n项开始，删除0项，替换m项
+        slice(n)从n项开始，删除到末尾
+        forEach用来遍历数组
+        includes()检测数组的每一项
+
+        数组去重的方法：
+
+        1.new Set去重
+        let arr = [1,2,1,2,3,4];
+        console.log([...new Set(arr)])
+        
+        2.includes去重
+        let arr = [1,2,1,2,3,4];
+        let newArr = [];
+        for(let i=0;i<arr.length;i++){
+            let cur = arr[i];
+            if(newArr.includes(cur)){
+                continue;
+            }else{
+                newArr.push(cur)
+            }
+        }
+        console.log(newArr)
+
+        3.利用obj键值对去重
+         let arr = [1,2,1,2,3,4];
+         let obj = {};
+        for(let i=0;i<arr.length;i++){
+            let cur = arr[i];
+            let newcur = [];
+            obj[cur] = cur;
+            for(let key in obj){
+              newcur.push(obj[key])
+            }
+            console.log(newcur)
+        }
+
+        //数组扁平化
+          1.利用flat
+          const arr = [1,2,[23],[3,4,[11,13,15,[[[[[17,18,19,20]]]]]]],21]
+          const ary = arr.flat(Infinity).sort((a,b) => a-b);
+         console.log(ary)
+         2.利用 toString()和split(',')
+         let arr = [1,2,3,[15,11,[17,18]]];
+         let arry = (arr) => arr.toString().split(',').map((item) => Number(item))
+         console.log(arry(arr))
+         3.利用concat和map
+         function fn(arr){
+             while(arr.some(item => Array.isArray(item))){
+                 arr = [].concat(...arr)
+             }
+             return arr
+         }
+         console.log(fn(arr))
+
+         //三大算法
+         //冒泡排序
+         //相邻的相比较，得出最大值
+          let ary = [8, 94, 15, 6, 3, 2];
+          for(let i=0;i<ary.length-1;i++){
+             for(let j=0;j<ary.length-1-i;j++){
+                   if(ary[j]>ary[j+1]){
+                      let temp = ary[j];
+                      ary[j] = ary[j+1];
+                      ary[j+1] = temp;
+                    }
+                }
+            }
+           console.log(ary)
+         
+           //快速排序
+           let ary = [8, 94, 15, 6, 3, 2];
+           function fn(ary){
+             let str = ary.length;
+             if(str<=1){
+                 return ary;
+             }
+             //中间项索引
+             let middleIndex = Math.floor(str/2);
+             //中间项
+             let middleValue = ary.splice(middleIndex,1)[0]
+             //声明left和right；
+              let left = [];
+              let right = [];
+              for(let i=0;i<str;i++){
+                  let cur = arr[i];
+                  if(cur<middleValue){
+                      left.push(cur)
+                  }else{
+                      right.push(cur)
+                  }
+              }
+              return fn(left).concat(middleValue,fn(right))
+           }
+           fn(ary)
+
+           //插入排序
+           function fn(arr){
+               for(let i=1;i<arr.length;i++){
+                   for(let j=i;j>0,j--){
+                       if(arr[j-1]>arr[j]){
+                           let temp = arr[j];
+                           arr[j] = arr[j-1];
+                           arr[j-1] = temp;
+                       }
+                   }
+               }
+               return arr;
+           }
+             字符串中的方法
+             charAt 获取字符串中索引中的index
+             let  str = '珠峰培训EverestTraining';
+             let stt = str.charAt(4)
+             console.log(stt)//=>E
+
+            charCodeAt 获取字符索引位置的字符的unicode编码值，0-65535的值
+            let  str = '珠峰培训EverestTraining';
+            let temp = str.charCodeAt(7)
+            console.log(temp)//114
+
+            substr 截取字符，
+            substr(n,m)从n截取到m，如果m不写直接截取到末尾，如果n,m都不写直接截取到全部，支持负数索引
+            let stt = str.substr(1,10)
+            console.log(stt)//=>"峰培训Everest"
+
+            slice(n,m)从n项截取到m项，并不包含到m项，如果只写 n，是从 n 开始截取到末尾；如果一个都不写，那就是截取全部；也支持负数索引
+
+            substring 截取字符
+            substring(n,m)，从n项截取到m项，并不包含到m项，如果只写 n，是从 n 开始截取到末尾；如果一个都不写，那就是截取全部；
+
+            toLowerCase()把字母转换成小写
+            toUpperCase()把字母转换成大写
+            
+            indexOf()从第一项开始查找字符索引的位置，如果没有找到就返回-1；
+            lastIndexOf()从最后一项开始查找字符索引的位置，如果没有找到就返回-1；
+
+            replace("str1","str2")把某部分字符进行替换 
+            let  str = '珠峰培训EverestTraining';
+            let stt = str.replace('珠峰培训','love');
+            console.log(stt)//=>"loveEverestTraining"
+
+            split()把字符拆分成数组
+            let att = "2021-12-13"
+            let s = att.split("-")
+            console.log(s)//=>['2021', '12', '13']
+
+            //问号处理参数
+            function prarams(str){
+             let obj = {};
+             let praramsStr = str.split("?")[1];
+             if(praramsStr){
+                let praramsAry = praramsStr.split("&");
+                for(let i=0;i<praramsAry.length;i++){
+                let cur = praramsAry[i];
+                let praramsURL =cur.split('=');
+                obj[praramsURL[0]] = praramsURL[1]  
+               }
+             }
+             return obj;
+           }
+           let news = prarams(str);
+           console.log(news)
+
+            Math对象常用的方法：
+
+            Math.abs() //取绝对值
+            Math.ceil()//向上取整
+            Math.floor()//向下取整
+            Math.round()//四舍五入
+            Math.sqrt()//开平方
+            Math.pow()//取字幂
+            Math.max/Math.min()取最大值和最小值
+            Math.random()获取0-1之间的小数
+
+            //元素节点 
+            html内容都是节点，通过描述节点属性和节点之间的关系，也是通过节点来获取元素对象的；
+            
+            DOM节点：
+            
+            Dom内容：   nodeType     nodeName  nodeValue
+            元素节点      1           大写签名      null
+            文本节点      3            #text       文本内容
+            注释节点      8            #conement   注释内容
+            document     9            #document    null
+
+            注意 换行和空格都是文本节点
+
+            #节点属性
+            childNodes 获取当前元素节点的所有子节点
+            children 获取当前元素的所有子节点
+            firstChild 获取当前元素的第一个子节点
+            lastChild 获取当前元素的最后一个子节点
+            firstElementchild 获取当前元素的第一个元素的子节点
+            lastElementchild 获取当前元素的最后一个元素的子节点
+            prentNode 获取当前元素的父亲节点
+            previousSibling 获取上一个节点
+            previousElementSibling获取上一个哥哥节点
+            nextSibling 获取下一个弟弟节点
+            nextElementSibling获取下一个元素弟弟节点
+
+            #动态操作dom
+            document.createElement()
+            appChild 在元素容器末尾添加一个元素
+            removeChild父级元素容器
+            insertBefore 把某个元素插入元素容器标签之前
+            cloneNode()复制某一个元素
+
+            #属性操作
+            setAttribute()给当前元素设置html行内属性
+            getAttribute()获取当前html行内属性值
+            rmoveAttribute()删除指定属性
+
+            # let var cost区别?
+            1.let和cost不需要进行变量提升
+            2.let和const不能进行重复声明，会报错.
+            3.let和const在全局声明，不会给window增加属性
+            4.let和const出现在代码块中，会变成块级作用域，并出现暂时性死区
+
+            #Es6语法
+            sybmol ${} ...ary improt express class new Set
+
+            #箭头函数与普通函数的区别：
+            1.箭头函数不能作为构造函数，不能new；
+            2.不能使用arguments对象
+            3.this指向不同，箭头函数定义在所在区域的对象，而普通函数看前面有没有点有点前面是谁，this就指向谁,
+            没有点就指向window。
+
+            #闭包
+            函数里面声明函数，子函数可以访问父函数的变量，反之则不可以，是为了保护子函数里面的变量被外界所污染。
+            在工工作中尽量减少使用闭包，消耗性能和内存。
+
+            #作用域链
+            在作用域中去查找一个变量，如果当前作用域中有就继续使用，没有就去上一级作用域去查找，如果还没有再去上一级查找，就这样
+            一级一级去查找，一直找到window为止，如果window没有，就报错。
+            
+            #this指向问题：
+            1.事件函数中的this是绑定该事件元素;
+            2.自执行函数中的this是指向window;
+            3.定时器中的this，指向window；
+            4.方法调用时，看方法前面有没有点，点前面是谁，this就指向谁，如果没有点，this指向window。
+            5.apply,bind,call能改变this的指向.
+
+            #++i和i++的区别：
+            ++i，先自身累加然后再运算；
+            i++,先运算在和自身累加；
+
+            ### 面象对象：
+            标记语言
+           编程语言：编程思想
+           面向过程：c
+           面向对象 java php C# .net javaScript
+
+            ### 单例设计模式：
+              把描述事务的信息放到一个命名空间中存储起来，减少全局变量的污染。
+               let obj = {
+                   name: 'Tom',
+                   age: 28,
+                   sex:"男"
+                 }
+                console.log(obj.sex)
+
+
+
+
+
+
+
+
+        
+         
+
+
+
+
+        */
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a = {
+        //     "name":"jom",
+        //      "age": 18,
+        // }
+        // a.box ="男",
+        // delete a.age;
+        // console.log(a.name);
+        // console.log(a["age"]);
+        // console.log(a.box);
+        // let a = [1,2,3,4,5]
+        // a.unshift(0)
+        // console.log(a);
+        // let st = [12,22,8,13,10,7,3]
+        // let ary = [9,33,44,11,55,5]
+        // ary.splice(2,1,1)
+        // console.log(ary);
+        // let arr = [1,2,1,2,3,4]
+        // let str = [...new Set(arr)]
+        // console.log(str);
+
+        // let newArr = [];
+        // for(let i=0;i<arr.length;i++){
+        //     let cur = arr[i];
+        //     if(newArr.includes(cur)){
+        //         continue;
+        //     }else{
+        //         newArr.push(cur)
+        //     }
+        // }
+        // console.log(newArr);
+        //  let obj = {};
+        //  for(let i=0;i<arr.length;i++){
+        //     let cur = arr[i];
+        //     let newCur = [];
+        //     obj[cur] = cur;
+        //     for(let key in obj){
+        //         newCur.push(obj[key])
+        //     }
+        //     console.log(newCur);
+        //  }
+
+        // const arr = [1,2,[23],[3,4,[11,13,15,[[[[[17,18,19,20]]]]]]],21]
+        // let arry = arr.flat(Infinity).sort((a,b) => a-b)
+        // console.log(arry);
+        
+        // let arr = [1,2,3,[15,11,[17,18]]];
+        // let arry = (arr) => arr.toString().split(',').map((item) => Number(item))
+        // console.log(arry(arr));
+         
+        // function fn(arr){
+        //     while(arr.some(item =>Array.isArray(item))){
+        //         arr = [].concat(...arr)
+        //     }
+        //    return arr;
+        // }
+        // let str = fn(arr)
+        //  console.log(str);
+         //冒泡排序
+        //  let ary = [8, 94, 15, 6, 3, 2];
+        //   for(let i=0;i<ary.length-1;i++){
+        //     for(let j=0;j<ary.length-1-i;j++){
+        //         if(ary[j]>ary[j+1]){
+        //             let temp = ary[j];
+        //             ary[j] = ary[j+1]
+        //             ary[j+1] = temp;
+        //         }
+        //     }
+        //   }
+        //   console.log(ary);
+        // 快速排序
+        // let ary = [8, 94, 15, 6, 3, 2];
+        // function fn(ary){
+        //     let str = ary.length;
+        //     if(str<=1){
+        //         return ary;
+        //     }
+        //     //中间索引
+        //     let middleIndex = Math.floor(str/2);
+        //     //中间项
+        //     let middleValue = ary.splice(middleIndex,1)[0];
+        //     //声明left和right
+        //     let left = [];
+        //     let right = [];
+        //     for(let i=0;i<str;i++){
+        //         let cur = ary[i];
+        //         if(cur<middleValue){
+        //             left.push(cur)
+        //         }else{
+        //             right.push(cur)
+        //         }
+        //     }
+        //     return fn(left).concat(middleValue,fn(right))
+        // }
+        //fn(ary)
+         
+
+    //插入排序
+    // let ary = [8, 94, 15, 6, 3, 2];
+    //   function fn(ary){
+    //     for(let i=1;i<ary.length;i++){
+    //         for(let j=1;j>0;j--){
+    //             if(ary[j]>ary[j-1]){
+    //                 let temp = ary[j];
+    //                 ary[j] = ary[j-1];
+    //                 ary[j-1] = temp;
+    //             }
+    //         }
+    //     }
+    //     return ary;
+    //   }
+    //   let str = fn(ary)
+    //    console.log(str);
+    // let  str = '珠峰培训EverestTraining';
+    // let stt = str.charCodeAt(7)
+    // console.log(stt)//=>114;
+    // let stt = str.substr(0,10)
+    // console.log(stt);//=>珠峰培训Everes
+    // let stt = str.slice(3,15)
+    // console.log(stt);//=>训EverestTrai
+    // let stt = str.replace("珠峰培训","I miss you")
+    // console.log(stt);//=>I miss youEverestTraining
+    // let str = "2021-12-13"
+    // let stt = str.split("-")
+    // console.log(stt);//=>['2021', '12', '13']
+
+    // function prarams(str){
+    //   let obj = {};
+    //   let praramsStr = str.split("?");
+    //   if(praramsStr){
+    //     let praramsAry = praramsStr.split("&");
+    //     for(let i=0;i<praramsAry.length;i++){
+    //         let cur = praramsAry[i];
+    //         let praramsURL = cur.split("=");
+    //         obj[praramsURL[0]] = praramsURL[1]
+    //     }
+    //   }
+    //   return obj;
+    // }
+    // prarams(str)
+    </script>
+</body>
+</html>

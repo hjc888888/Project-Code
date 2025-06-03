@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .connter{
+            height: 1000px;
+            width: 1000px;
+            background: red;
+            margin:100px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        .main{
+            width: 200px;
+            height: 200px;
+            background: black;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        .right{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="connter">
+        <div class="main"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <!-- 
+        flex布局简称弹性布局，flex是一个容器，每个子元素都是这个容器的成员
+        1.flex-direction是从主轴方向排列
+          flex-direction：row 主轴水平方向，起点在左端
+          flex-direction:row-reverse 主轴水平方向，起点在右端
+          flex-direction：column主轴垂直方向，起点在上沿
+          flex-direction：column-reverse
+        2.flex-warp 项目第一行放不下，换行
+          flex-warp：nowarp
+          flex-warp:warp
+          flex-warp:warp-revese
+        3.justify-content：flex-start flex-end center space-bween space-around
+        4.align-items flex-start flex-end center basesline stretch
+        5.align-self flex-start flex-end center basesline stretch
+        flex-glow flex flex-shrink flex-basis
+
+     -->
+</body>
+</html>

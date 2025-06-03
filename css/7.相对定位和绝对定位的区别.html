@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位和绝对定位的区别</title>
+</head>
+<body>
+    <!-- 
+        position：relative 相对于原来的元素位置移动，不脱离文档流，不会影响其他元素的布局
+        position：absolute 元素脱离文档流，如果设置偏移量，会影响其他元素的布局
+
+        IE盒模型与w3c盒模型的区别
+        IE盒模型： width= margin(外边距)+border(线框)+padding(内边距)+content(内容包含padding和border)
+        w3c盒模型  width=margin(外边距)+border(线框)+padding(内边距)+content(不包含padding+border)
+
+        清除浮动：
+        overflow：hiddle 在父元素添加这个属性，就会清除父元素对子元素的浮动对页面的影响
+        clear：both
+        after和before双伪元素
+
+        什么叫语义化标签？
+        方便开发，便于团队合作，方便阅读
+        ul li ol tilte nav code。。。。 
+
+        flex布局语法
+        flex-direction 决定主轴的方向
+        row 主轴水平方向起点在左端
+        row-reverse主轴水平起点在右端
+        column主轴垂直方向起点在上沿
+        column-reverse主轴垂直方向起点在下沿
+
+        flex-warp：默认排成一条，一行排不下换行
+        nowarp 默认不换行
+        warp 换行第一行在上方
+        warp-reverse 换行第一行在下方
+       
+        flex-flow是flex-direction和flex-warp的缩写
+        
+        justfiy-conntent 项目上主轴对齐的方式
+        有五个值
+        flex-start 左对齐
+        flex-end 右对齐
+        center 居中
+        space-between 2端对齐
+        space-around 按照间隔1:1的比例整行对齐
+
+        align-items ：交叉轴对齐
+        flex-start 交叉轴起点对齐
+        flex-end 交叉轴终点对齐
+        baseline 项目的第一行文字基线对齐
+        stretch 如果项目未设置高度或设置auto ，将占满整个容器的高度
+         
+        align-conntent 多根轴线对齐的方式，如果项目一根轴线不起作用
+        取6个值
+        flex-strat： 与交叉轴起点对齐
+        flex-end： 与交叉轴终点对齐
+        center：居中对齐
+        space-between：2端对齐
+        space-around 按照1:1比例间隔对齐
+        stretch轴线沾满整个交叉轴
+
+        order 定义项目的排列顺序 默认为0
+        flex-grow属性定义放大比例，默认为0，即使有剩余空间，也不放大
+        flex-shrink属性定义缩小比例，默认为1，如果空不足，项目就会缩小
+        flex-basis计算项目的空间方便分配，默认值为auto
+        align-self，允许单个项目有于其它项目不一样的对齐方式，默认值为auto
+        flex 是flex-grow和flex-baseis和flex-shrink的缩写 默认值为 0 1 auto可选
+
+        css新特性
+        background-size
+        tranform
+        background-color
+        after
+        berfore
+        last-child
+        first-child
+        hover
+        active
+
+        h5特性
+        herder
+        nav
+        footer
+        email
+        date
+        datime
+        onsrcoll
+        time
+        menu
+     -->
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+ console.log(Number("12px"));//=>NAN
+ console.log(Number("12"));//=>12
+ console.log(Number[12,23])=>[12,23].tostring()=>"12,23"=>Number("12,23")=>//NAN
+ console.log(Number({}))=>["Object,object"]=>NAN
+ console.log(Number(true))//1
+ console.log(Number(false))//1
+ console.log(Number(null))//0
+ console.log(Number(undefined))//NAN
+
+ console.log(isNaN("1"))//false
+ console.log(isNaN(true))//flase
+ console.log(isNaN(flse))//false
+ console.log(isNaN(null))//false
+ console.log(isNaN(undefined))//true
+ console.log(isNaN("12px"))//true
+ console.log(isNaN([12,23]))//true
+ console.log(isNaN({'name':'lili'}))
+*/
+console.log(isNaN("12px"));//
+
+let obj = {
+    name:"Jack",
+    1:"26"
+}
+obj.sex="男"
+obj.red="红"
+obj.name="Tom"
+delete obj.red
+console.log(obj["name"]);
+console.log(obj["1"]);
+console.log(obj.sex);
+console.log(obj.red);
+console.log(obj);
+
+// var num = 6;
+// if (num > 6) {
+//   num++; // => num = num + 1; 在自身上累加一个
+// } else if (num >= 10) {
+//   num--;
+// } else {
+//   num+=2
+// }
+// console.log(num);
+
+// if (0 || 1) {
+//   console.log('true')
+// }
+// if (0 || false) {
+//   console.log('false')
+// }
+// if (true || 0) {
+//   console.log(true);
+// }
+// if (true && 1) {
+//   console.log(1, '0 && 1')
+// }
+// if (0 && false) {
+//   console.log(2, '0 && false')
+// }
+// if (true && "1") {
+//   console.log(3, 'true && 0');
+// }
+// var r1 = 1 || 0;
+// console.log(r1);
+// var r2 = true || false;
+// console.log(r2);
+// var r3 = 1 && 0;
+// var r4 = false && 0;
+// console.log(r3);
+// console.log(r4);
+// 
+
+let str = [12,10,33,11,3,6,34]
+// console.log(str.sort((a,b) => a-b));
+console.log(str.sort((a,b) => b-a));
+let aty = [1,2,3,4]
+let st = aty.splice(1,1,5,6)
+console.log(aty);
+</script>
+    
+</body>
+</html>

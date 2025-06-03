@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平垂直居中</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 100px auto;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: red;
+        }
+        .innter{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+ </style>
+</head>
+<body>
+   <div class="box">
+       <div class="innter"></div>
+   </div>
+</body>
+</html>
